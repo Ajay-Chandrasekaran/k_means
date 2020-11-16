@@ -29,11 +29,11 @@ def compute_centroids(data, closest_centroid_index, n_centroids):
         n_neighbours[centroid_index] += 1
     
     for ind in range(n_centroids):
-        new_centroids[ind] /= (n_neighbours[ind], n_neighbours[ind])
+        new_centroids[ind] /= n_neighbours[ind]
     
     return new_centroids
 
-def k_means_2d(data, k_centroids, iterations):
+def k_means(data, k_centroids, iterations):
     centroids = initialize_centroids(data, 3)
     centroids_history = list()
     centroids_history.append(centroids)
